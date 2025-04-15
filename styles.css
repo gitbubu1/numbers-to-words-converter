@@ -1,27 +1,65 @@
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #f2f2f2;
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  input, select, button {
-    padding: 10px;
-    margin: 10px;
-    font-size: 1rem;
-  }
-  
-  #output {
-    font-size: 1.2rem;
-    color: #006400;
-    margin-top: 20px;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 2rem;
+  background-color: #f0f0f0;
+  color: #333;
+  text-align: center;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+input, select, button {
+  padding: 0.8rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#output {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+button:last-of-type {
+  margin-top: 1rem;
+  display: block;
+  margin-inline: auto;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #f9f9f9;
+}
+
+body.dark .container {
+  background-color: #1e1e1e;
+}
+
+body.dark input,
+body.dark select,
+body.dark button {
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+}
