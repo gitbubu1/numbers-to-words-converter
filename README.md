@@ -32,3 +32,12 @@ A simple and responsive web app that converts numeric values into words using bo
 
 ## 📂 Project Structure
 
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+
+Made with ❤️ for number nerds and word wizards.
+
