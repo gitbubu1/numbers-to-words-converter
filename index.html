@@ -3,25 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Number to Words Converter</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Numbers to Words Converter</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Number to Words Converter</h1>
-
-  <input type="number" id="numInput" placeholder="Enter a number" />
-  
-  <select id="format">
-    <option value="indian">Indian Format</option>
-    <option value="international">International Format</option>
-  </select>
-
-  <button onclick="convertToWords()">Convert</button>
-
-  <div id="buttons"></div>
-
-  <div id="output"></div>
-
+  <div class="container">
+    <h1>Numbers to Words Converter</h1>
+    <input type="number" id="numInput" placeholder="Enter a number" />
+    <select id="format">
+      <option value="indian">Indian Format</option>
+      <option value="international">International Format</option>
+    </select>
+    <button onclick="convertToWords()">Convert</button>
+    <div id="output"></div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
