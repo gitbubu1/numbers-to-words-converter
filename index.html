@@ -1,96 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Number to Words Converter</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      margin: 0;
-      background-color: #f2f2f2;
-    }
-    h1 {
-      color: #333;
-    }
-    input, select, button {
-      padding: 10px;
-      margin: 10px;
-      font-size: 1rem;
-    }
-    #output {
-      font-size: 1.2rem;
-      color: #006400;
-      margin-top: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <h1>Number to Words Converter</h1>
-  <input type="number" id="numInput" placeholder="Enter a number">
+
+  <input type="number" id="numInput" placeholder="Enter a number" />
+  
   <select id="format">
     <option value="indian">Indian Format</option>
     <option value="international">International Format</option>
   </select>
+
   <button onclick="convertToWords()">Convert</button>
+
+  <div id="buttons"></div>
+
   <div id="output"></div>
 
-  <script>
-    function convertToWords() {
-      const num = parseInt(document.getElementById('numInput').value);
-      const format = document.getElementById('format').value;
-      let words = '';
-
-      if (isNaN(num)) {
-        document.getElementById('output').textContent = 'Please enter a valid number.';
-        return;
-      }
-
-      if (format === 'indian') {
-        words = convertIndian(num);
-      } else {
-        words = convertInternational(num);
-      }
-
-      document.getElementById('output').textContent = words;
-    }
-
-    function convertIndian(num) {
-      return `₹${num.toLocaleString('en-IN')} → "${numberToWords(num)}"`;
-    }
-
-    function convertInternational(num) {
-      return `$${num.toLocaleString('en-US')} → "${numberToWords(num)}"`;
-    }
-
-    function numberToWords(num) {
-      const a = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
-      const b = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
-
-      if ((num = num.toString()).length > 9) return "overflow";
-      const paddedNum = ("000000000" + num).substr(-9);
-      const n = paddedNum.match(/.{1,2}/g);
-
-      let str = '';
-      const crore = parseInt(paddedNum.substr(0, 2));
-      const lakh = parseInt(paddedNum.substr(2, 2));
-      const thousand = parseInt(paddedNum.substr(4, 2));
-      const hundred = parseInt(paddedNum.substr(6, 1));
-      const tens = parseInt(paddedNum.substr(7, 2));
-
-      if (crore) str += (a[crore] || b[Math.floor(crore / 10)] + " " + a[crore % 10]) + " crore ";
-      if (lakh) str += (a[lakh] || b[Math.floor(lakh / 10)] + " " + a[lakh % 10]) + " lakh ";
-      if (thousand) str += (a[thousand] || b[Math.floor(thousand / 10)] + " " + a[thousand % 10]) + " thousand ";
-      if (hundred) str += a[hundred] + " hundred ";
-      if (tens) str += (str !== "" ? "and " : "") + (a[tens] || b[Math.floor(tens / 10)] + " " + a[tens % 10]) + " ";
-
-      return str.trim();
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
